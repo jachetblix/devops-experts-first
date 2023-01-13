@@ -3,6 +3,8 @@ from db_connector import DBConnector
 from pypika import Query, Table, Field
 from datetime import datetime
 from model import users
+import os
+import signal
 
 app = Flask(__name__)
 
@@ -58,6 +60,15 @@ user_rest_routes = {'POST': create_user, 'PUT': update_user, 'DELETE': delete_us
 @app.route('/users/<user_id>', methods=['PUT', 'GET', 'POST', 'DELETE'])
 def user_rest_route(user_id):
     return user_rest_routes[request.method](user_id)
+
+
+
+
+
+@app.route('/stop_server')
+def stop_server():
+    os.kill(os.getpid(), signal.CTRL_C_EVENT)
+    return 'Server stopped'
 
 
 if __name__ == '__main__':
