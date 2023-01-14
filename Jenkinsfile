@@ -25,21 +25,21 @@ pipeline {
             stage('Run backend_testing') {
                 steps {
                     script {
-                        sh 'python3 tests\backend_testing.py'
+                        sh 'python3 tests/backend_testing.py'
                 }
             }
         }
             stage('Run frontend_testing') {
                 steps {
                     script {
-                        sh 'python3 tests\frontend_testing.py'
+                        sh 'python3 tests/frontend_testing.py'
                 }
             }
         }
             stage('Run combined_testing') {
                 steps {
                     script {
-                        sh 'python3 tests\combined_testing.py'
+                        sh 'python3 tests/combined_testing.py'
                 }
             }
         }
