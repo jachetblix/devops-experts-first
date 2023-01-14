@@ -2,6 +2,11 @@ pipeline {
     agent any
         stages {
             stage('checkout') {
+                agent {
+                    docker {
+                        image 'python:3-alpine'
+                }
+            }
                 steps {
                     git 'https://github.com/jachetblix/devops-experts-first.git'
             }
@@ -9,7 +14,7 @@ pipeline {
             stage('Install requirements.txt') {
                 steps {
                     script {
-                        sh 'pip install -r requirements.txt'
+                        sh 'pip install --user -r requirements.txt'
                     }
                 }
             }
