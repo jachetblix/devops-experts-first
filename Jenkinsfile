@@ -9,7 +9,7 @@ pipeline {
             stage('Install requirements.txt') {
                 steps {
                     script {
-                        sh 'python3 pip install requirements.txt'
+                        sh 'pip install requirements.txt'
                     }
                 }
             }
