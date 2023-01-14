@@ -6,6 +6,13 @@ pipeline {
                     git 'https://github.com/jachetblix/devops-experts-first.git'
             }
         }
+            stage('Install requirements.txt') {
+                steps {
+                    script {
+                        sh 'python3 pip install requirements.txt'
+                    }
+                }
+            }
              stage('Run rest_app') {
                 steps {
                     script {
