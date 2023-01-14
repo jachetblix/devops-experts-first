@@ -9,7 +9,7 @@ pipeline {
              stage('Run rest_app') {
                 steps {
                     script {
-                        sh 'nohup python3 devops-experts-first/rest_app.py &'
+                        sh 'nohup python3 rest_app.py &'
                     }
                 }
             }
@@ -18,35 +18,35 @@ pipeline {
                 steps {
                     script {
 
-                        sh 'nohup python3 devops-experts-first/web_app.py &'
+                        sh 'nohup python3 web_app.py &'
                 }
             }
         }
             stage('Run backend_testing') {
                 steps {
                     script {
-                        sh 'python3 devops-experts-first/tests/backend_testing.py'
+                        sh 'python3 /tests/backend_testing.py'
                 }
             }
         }
             stage('Run frontend_testing') {
                 steps {
                     script {
-                        sh 'python3 devops-experts-first/tests/frontend_testing.py'
+                        sh 'python3 /tests/frontend_testing.py'
                 }
             }
         }
             stage('Run combined_testing') {
                 steps {
                     script {
-                        sh 'python3 devops-experts-first/tests/combined_testing.py'
+                        sh 'python3 /tests/combined_testing.py'
                 }
             }
         }
             stage('Run clean_environment') {
                 steps {
                     script {
-                        sh 'python3 devops-experts-first/clean_environment.py'
+                        sh 'python3 clean_environment.py'
                 }
             }
         }
