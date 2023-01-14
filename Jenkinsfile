@@ -13,7 +13,7 @@ pipeline {
                     }
                 }
             }
-        }
+
             stage('Run web_app') {
                 steps {
                     script {
