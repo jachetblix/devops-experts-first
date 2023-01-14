@@ -32,21 +32,21 @@ pipeline {
         stage('Run backend_testing') {
             steps {
                 script {
-                        sh 'python3 devops-experts-first/backend_testing.py'
+                        sh 'python3 devops-experts-first/tests/backend_testing.py'
                 }
             }
         }
         stage('Run frontend_testing') {
             steps {
                 script {
-                        sh 'python3 devops-experts-first/frontend_testing.py'
+                        sh 'python3 devops-experts-first/tests/frontend_testing.py'
                 }
             }
         }
         stage('Run combined_testing') {
             steps {
                 script {
-                        sh 'python3 devops-experts-first/combined_testing.py'
+                        sh 'python3 devops-experts-first/tests/combined_testing.py'
                 }
             }
         }
