@@ -8,7 +8,7 @@ pipeline {
         }
             stage('Install requirements.txt') {
                 steps {
-                        sh 'pip install --user -r requirements.txt'
+                    sh 'pip3 install --user -r requirements.txt'
                 }
             }
              stage('Run rest_app') {
