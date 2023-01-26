@@ -63,8 +63,6 @@ def user_rest_route(user_id):
 
 
 
-
-
 @app.route('/stop_server')
 def stop_server():
     os.kill(os.getpid(), signal.CTRL_C_EVENT)

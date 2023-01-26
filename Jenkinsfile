@@ -8,7 +8,11 @@ pipeline {
         }
             stage('Install requirements.txt') {
                 steps {
+<<<<<<< HEAD
                     sh 'pip install --user -r requirements.txt'
+=======
+                    sh 'pip3 install --user -r requirements.txt'
+>>>>>>> refs/remotes/origin/master
                 }
             }
              stage('Run rest_app') {
