@@ -4,7 +4,7 @@ from db_connector import DBConnector
 from datetime import datetime
 
 users_table = Table('users')
-connector = DBConnector('127.0.0.1:3306', 'root', '12345678', 'users')
+connector = DBConnector('db', 'root', '12345678', 'users')
 
 
 def get_user(user_id):

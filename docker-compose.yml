@@ -12,15 +12,6 @@ services:
         - MYSQL_HOST=''
     volumes:
       - ./db:/docker-entrypoint-initdb.d/:ro
-  web:
-    build: .
-    command: python3 web_app.py
-    volumes:
-      - .:/app
-    ports:
-      - "5001:5001"
-    depends_on:
-      - db
   rest_app:
     build: .
     command: python3 rest_app.py
@@ -30,4 +21,6 @@ services:
       - .:/app
     depends_on:
       - db
+    links:
+      - "db:db_devops"
 
