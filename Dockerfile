@@ -14,7 +14,7 @@ RUN pip install -r requirements.txt
 COPY . /app
 
 
-CMD ["python3", "web_app.py","rest_app.py"]
+CMD ["python3","rest_app.py"]
 #FROM python:3.8-alpine3.17
 #COPY . /app
 #WORKDIR /app
