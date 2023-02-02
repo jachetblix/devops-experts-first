@@ -69,5 +69,8 @@ def stop_server():
     return 'Server stopped'
 
 
-if __name__ == '__main__':
-    app.run(port=5000)
+@app.errorhandler(404)
+def resource_not_found(e):
+    return jsonify(error=str(e)), 404
+
+app.run(host='127.0.0.1', debug=True, port=5000)
