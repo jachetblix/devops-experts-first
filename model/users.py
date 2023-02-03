@@ -4,7 +4,15 @@ from db_connector import DBConnector
 from datetime import datetime
 
 users_table = Table('users')
-connector = DBConnector('db', 'root', '12345678', 'db_devops')
+is_connected = False
+while not is_connected:
+    try:
+        connector = DBConnector('db', 'root', '12345678', 'db_devops')
+        is_connected = True
+        print('connected')
+    except:
+        time.sleep(1)
+        print('not connected')
 
 
 def get_user(user_id):
